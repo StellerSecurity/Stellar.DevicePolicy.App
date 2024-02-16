@@ -7,7 +7,7 @@ android {
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "Stellar.DevicePolicy.App"
+        applicationId = "stellar.devicePolicy.app"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

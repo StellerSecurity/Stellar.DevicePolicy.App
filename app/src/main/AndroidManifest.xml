@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+
+    <uses-permission android:name="android.permission.REBOOT" />
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,6 +14,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.StellarDevicePolicy"
         tools:targetApi="31">
+
+        <receiver
+            android:name=".DeviceAdmin"
+            android:description="@string/device_admin_description"
+            android:exported="true"
+            android:label="Stellar Device Policy"
+            android:permission="android.permission.BIND_DEVICE_ADMIN">
+            <meta-data
+                android:name="android.app.device_admin"
+                android:resource="@xml/polices" />
+
+            <intent-filter>
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
+            </intent-filter>
+        </receiver>
+
+
         <activity
             android:name=".MainActivity"
             android:exported="true"

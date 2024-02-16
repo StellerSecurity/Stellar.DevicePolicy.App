@@ -1,5 +1,12 @@
 package Stellar.DevicePolicy.App;
 
+import static android.content.Context.DEVICE_POLICY_SERVICE;
+import static androidx.core.content.ContextCompat.getSystemService;
+
+import android.app.admin.DevicePolicyManager;
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,6 +28,8 @@ public class FirstFragment extends Fragment {
             Bundle savedInstanceState
     ) {
 
+
+
         binding = FragmentFirstBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
@@ -28,14 +37,6 @@ public class FirstFragment extends Fragment {
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-        binding.buttonFirst.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(FirstFragment.this)
-                        .navigate(R.id.action_FirstFragment_to_SecondFragment);
-            }
-        });
     }
 
     @Override

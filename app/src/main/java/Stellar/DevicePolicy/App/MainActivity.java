@@ -6,17 +6,11 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 
-import com.google.android.material.snackbar.Snackbar;
-
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.PowerManager;
 import android.os.UserManager;
-import android.util.Log;
-import android.view.View;
 
-import androidx.core.view.WindowCompat;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -36,8 +30,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
 
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
@@ -62,18 +54,6 @@ public class MainActivity extends AppCompatActivity {
         devicePolicyManager.setPasswordMinimumLength(admin, 8);
         devicePolicyManager.addUserRestriction(admin, UserManager.DISALLOW_USB_FILE_TRANSFER);
         devicePolicyManager.addUserRestriction(admin, UserManager.DISALLOW_BLUETOOTH);
-        //devicePolicyManager.addUserRestriction(admin, UserManager.DISALLOW_DEBUGGING_FEATURES);
-
-
-        //devicePolicyManager.setCameraDisabled(admin, true);
-
-        /*try {
-            PowerManager pm = (PowerManager) getSystemService(POWER_SERVICE);
-            pm.reboot(null);
-        } catch (RuntimeException exception) {
-
-        }*/
-
 
     }
 
@@ -86,12 +66,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-
         return super.onOptionsItemSelected(item);
     }
 
